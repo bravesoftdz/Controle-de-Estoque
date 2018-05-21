@@ -1,0 +1,27 @@
+unit uFormCadPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TFormCadPadrao = class(TForm)
+    Panel_Superior: TPanel;
+    Panel_Central: TPanel;
+    Panel_Inferior: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadPadrao: TFormCadPadrao;
+
+implementation
+
+{$R *.dfm}
+
+end.

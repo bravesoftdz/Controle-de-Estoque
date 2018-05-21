@@ -1,0 +1,168 @@
+unit uFormSetores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFormCadPadrao, Data.DB, Vcl.StdCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TFormSetores = class(TFormCadPadrao)
+    Label1: TLabel;
+    DBEdit_CodSetor: TDBEdit;
+    DS_Setores: TDataSource;
+    Label2: TLabel;
+    DBEdit_NomeSetor: TDBEdit;
+    Label3: TLabel;
+    DBEdit_DtCadSetor: TDBEdit;
+    RadioButton_SetorAtivo: TRadioButton;
+    RadioButton_SetorDesativado: TRadioButton;
+    procedure BTN_NovoClick(Sender: TObject);
+    procedure BTN_EditarClick(Sender: TObject);
+    procedure BTN_SalvarClick(Sender: TObject);
+    procedure BTN_ExcluirClick(Sender: TObject);
+    procedure BTN_CancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure Novo;
+    procedure Editar;
+    procedure Cancelar;
+    procedure Excluir;
+    procedure Salvar;
+  public
+    { Public declarations }
+  end;
+
+var
+  FormSetores: TFormSetores;
+
+implementation
+
+{$R *.dfm}
+
+{ TFormSetores }
+
+procedure TFormSetores.BTN_CancelarClick(Sender: TObject);
+begin
+  inherited;
+  Cancelar;
+end;
+
+procedure TFormSetores.BTN_EditarClick(Sender: TObject);
+begin
+  inherited;
+  Editar;
+end;
+
+procedure TFormSetores.BTN_ExcluirClick(Sender: TObject);
+begin
+  inherited;
+  Excluir;
+end;
+
+procedure TFormSetores.BTN_NovoClick(Sender: TObject);
+begin
+  inherited;
+  Novo;
+end;
+
+procedure TFormSetores.BTN_SalvarClick(Sender: TObject);
+begin
+  inherited;
+  Salvar;
+end;
+
+procedure TFormSetores.Cancelar;
+begin
+  BTN_Novo.Enabled     := True;
+  BTN_Editar.Enabled   := True;
+  BTN_Excluir.Enabled  := False;
+  BTN_Salvar.Enabled   := False;
+  BTN_Cancelar.Enabled := False;
+
+  try
+    DS_Setores.DataSet.Cancel;
+  Except
+    on e:Exception do
+      ShowMessage('Erro ao cancelar!');
+  end;
+end;
+
+procedure TFormSetores.Editar;
+begin
+  BTN_Novo.Enabled     := False;
+  BTN_Editar.Enabled   := False;
+  BTN_Excluir.Enabled  := True;
+  BTN_Salvar.Enabled   := True;
+  BTN_Cancelar.Enabled := True;
+
+  DBEdit_NomeSetor.SetFocus;
+
+  try
+    DS_Setores.DataSet.Edit;
+  except
+    on e:Exception do
+      ShowMessage('Erro ao editar o registro!');
+  end;
+end;
+
+procedure TFormSetores.Excluir;
+begin
+  ShowMessage('O registro será excluído permanentemente!');
+
+  BTN_Novo.Enabled     := True;
+  BTN_Editar.Enabled   := True;
+  BTN_Excluir.Enabled  := False;
+  BTN_Salvar.Enabled   := False;
+  BTN_Cancelar.Enabled := False;
+
+  try
+    DS_Setores.DataSet.Delete;
+  except
+    on e:Exception do
+      ShowMessage('Erro ao excluir o registro!');
+  end;
+end;
+
+procedure TFormSetores.Novo;
+begin
+  BTN_Novo.Enabled     := False;
+  BTN_Editar.Enabled   := False;
+  BTN_Excluir.Enabled  := False;
+  BTN_Salvar.Enabled   := True;
+  BTN_Cancelar.Enabled := True;
+
+  try
+    DS_Setores.DataSet.Append;
+  except
+    on e:Exception do
+      ShowMessage('Erro');
+  end;
+
+  DBEdit_NomeSetor.SetFocus;
+end;
+
+procedure TFormSetores.Salvar;
+begin
+  BTN_Novo.Enabled     := True;
+  BTN_Editar.Enabled   := True;
+  BTN_Excluir.Enabled  := False;
+  BTN_Salvar.Enabled   := False;
+  BTN_Cancelar.Enabled := False;
+
+  try
+
+    //Grava a data atual
+    DBEdit_DtCadSetor.Text := DateToStr(Date);
+    DS_Setores.DataSet.Post;
+  except
+    on e:Exception do
+      ShowMessage('Erro ao salvar o registro!');
+  end;
+
+  BTN_Novo.SetFocus;
+
+end;
+
+end.

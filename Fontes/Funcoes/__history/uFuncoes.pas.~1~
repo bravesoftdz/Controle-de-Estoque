@@ -1,0 +1,21 @@
+unit uFuncoes;
+
+interface
+  function RemoveAcento(Str: String): String;
+
+implementation
+
+function RemoveAcento(Str: String): String;
+const
+  ComAcento = 'àâêôûãõáéíóúçüÀÂÊÔÛÃÕÁÉÍÓÚÇÜ';
+  SemAcento = 'aaeouaoaeioucuAAEOUAOAEIOUCU';
+var
+  x: Integer;
+begin
+  for x := 1 to Length(Str) do
+    if Pos(Str[x],ComAcento) <> 0 then
+      Str[x] := SemAcento[Pos(Str[x], ComAcento)];
+    Result := Str;
+end;
+
+end.

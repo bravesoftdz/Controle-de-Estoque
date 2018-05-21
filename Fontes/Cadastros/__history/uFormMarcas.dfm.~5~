@@ -1,0 +1,107 @@
+inherited FormMarcas: TFormMarcas
+  Caption = 'FormMarcas'
+  ClientWidth = 402
+  ExplicitWidth = 408
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Superior: TPanel
+    Width = 402
+    Height = 65
+    ExplicitWidth = 402
+    ExplicitHeight = 65
+    object Label1: TLabel
+      Left = 24
+      Top = 13
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit_CodMarca
+    end
+    object Label2: TLabel
+      Left = 95
+      Top = 13
+      Width = 29
+      Height = 13
+      Caption = 'Marca'
+      FocusControl = DBEdit_NomeMarca
+    end
+    object Label3: TLabel
+      Left = 279
+      Top = 13
+      Width = 62
+      Height = 13
+      Caption = 'Dt. Cadastro'
+      FocusControl = DBEdit_DtCadMarca
+    end
+    object DBEdit_CodMarca: TDBEdit
+      Left = 24
+      Top = 29
+      Width = 65
+      Height = 21
+      DataField = 'id_marca'
+      DataSource = DS_Marcas
+      TabOrder = 0
+    end
+    object DBEdit_NomeMarca: TDBEdit
+      Left = 95
+      Top = 29
+      Width = 178
+      Height = 21
+      DataField = 'nome_marca'
+      DataSource = DS_Marcas
+      TabOrder = 1
+    end
+    object DBEdit_DtCadMarca: TDBEdit
+      Left = 279
+      Top = 29
+      Width = 100
+      Height = 21
+      DataField = 'dt_cadastro'
+      DataSource = DS_Marcas
+      TabOrder = 2
+    end
+  end
+  inherited Panel_Central: TPanel
+    Top = 65
+    Width = 402
+    Height = 354
+    ExplicitLeft = 0
+    ExplicitTop = 65
+    ExplicitWidth = 402
+    ExplicitHeight = 354
+    inherited DBGrid_Tabela: TDBGrid
+      Width = 400
+      Height = 352
+      DataSource = DS_Marcas
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id_marca'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_marca'
+          Width = 250
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'dt_cadastro'
+          Width = 80
+          Visible = True
+        end>
+    end
+  end
+  inherited Panel_Inferior: TPanel
+    Width = 402
+    ExplicitWidth = 402
+  end
+  object DS_Marcas: TDataSource
+    AutoEdit = False
+    DataSet = dmDados.Marcas
+    Left = 168
+    Top = 224
+  end
+end

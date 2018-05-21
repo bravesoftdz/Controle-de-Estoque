@@ -1,0 +1,149 @@
+inherited FormEstados: TFormEstados
+  Caption = 'Estados'
+  ClientWidth = 383
+  ExplicitWidth = 389
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Superior: TPanel
+    Width = 383
+    Height = 62
+    ExplicitWidth = 398
+    ExplicitHeight = 62
+    object Label1: TLabel
+      Left = 9
+      Top = 10
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit_CodEstado
+    end
+    object Label2: TLabel
+      Left = 50
+      Top = 10
+      Width = 33
+      Height = 13
+      Caption = 'Estado'
+      FocusControl = DBEdit_NomeEstado
+    end
+    object Label3: TLabel
+      Left = 212
+      Top = 10
+      Width = 13
+      Height = 13
+      Caption = 'UF'
+      FocusControl = DBEdit_UF
+    end
+    object Label4: TLabel
+      Left = 265
+      Top = 10
+      Width = 19
+      Height = 13
+      Caption = 'Pa'#237's'
+      FocusControl = DBEdit_NomePais
+    end
+    object DBEdit_CodEstado: TDBEdit
+      Left = 9
+      Top = 26
+      Width = 35
+      Height = 21
+      DataField = 'id_estado'
+      DataSource = DS_Estados
+      TabOrder = 0
+    end
+    object DBEdit_NomeEstado: TDBEdit
+      Left = 50
+      Top = 26
+      Width = 159
+      Height = 21
+      DataField = 'nome_estado'
+      DataSource = DS_Estados
+      TabOrder = 1
+    end
+    object DBEdit_UF: TDBEdit
+      Left = 212
+      Top = 26
+      Width = 47
+      Height = 21
+      DataField = 'sigla_uf'
+      DataSource = DS_Estados
+      TabOrder = 2
+    end
+    object DBEdit_NomePais: TDBEdit
+      Left = 265
+      Top = 26
+      Width = 93
+      Height = 21
+      DataField = 'nome_pais'
+      DataSource = DS_Estados
+      TabOrder = 3
+    end
+  end
+  inherited Panel_Central: TPanel
+    Top = 62
+    Width = 383
+    Height = 357
+    ExplicitLeft = 0
+    ExplicitTop = 62
+    ExplicitWidth = 398
+    ExplicitHeight = 357
+    inherited DBGrid_Tabela: TDBGrid
+      Width = 381
+      Height = 355
+      DataSource = DS_Estados
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id_estado'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_estado'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'sigla_uf'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'codigo_ibge_uf'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_pais'
+          Width = 80
+          Visible = True
+        end>
+    end
+  end
+  inherited Panel_Inferior: TPanel
+    Width = 383
+    ExplicitWidth = 398
+    inherited BTN_Novo: TButton
+      OnClick = BTN_NovoClick
+    end
+    inherited BTN_Salvar: TButton
+      OnClick = BTN_SalvarClick
+    end
+    inherited BTN_Excluir: TButton
+      OnClick = BTN_ExcluirClick
+    end
+    inherited BTN_Cancelar: TButton
+      OnClick = BTN_CancelarClick
+    end
+    inherited BTN_Editar: TButton
+      OnClick = BTN_EditarClick
+    end
+  end
+  object DS_Estados: TDataSource
+    DataSet = dmDados.Estados
+    Left = 192
+    Top = 232
+  end
+end

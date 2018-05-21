@@ -1,0 +1,30 @@
+unit uFormTipoProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFormCadPadrao, Data.DB, Vcl.StdCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TFormTipoProduto = class(TFormCadPadrao)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DS_TipoProduto: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormTipoProduto: TFormTipoProduto;
+
+implementation
+
+{$R *.dfm}
+
+end.

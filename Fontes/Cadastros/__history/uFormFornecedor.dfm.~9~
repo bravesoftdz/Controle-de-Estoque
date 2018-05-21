@@ -1,0 +1,424 @@
+object FormFornecedor: TFormFornecedor
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Fornecedor'
+  ClientHeight = 357
+  ClientWidth = 605
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel_Superior: TPanel
+    Left = 0
+    Top = 0
+    Width = 605
+    Height = 65
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 13
+      Top = 10
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit_CodFornecedor
+    end
+    object Label2: TLabel
+      Left = 95
+      Top = 10
+      Width = 60
+      Height = 13
+      Caption = 'Raz'#227'o Social'
+      FocusControl = DBEdit_NomeFornecedor
+    end
+    object Label3: TLabel
+      Left = 415
+      Top = 10
+      Width = 48
+      Height = 13
+      Caption = 'CNPJ/CPF'
+      FocusControl = DBEdit_CNPJ_CPF
+    end
+    object DBEdit_CodFornecedor: TDBEdit
+      Left = 13
+      Top = 26
+      Width = 76
+      Height = 21
+      DataField = 'id_fornecedor'
+      DataSource = DS_Fornecedor
+      TabOrder = 0
+    end
+    object DBEdit_NomeFornecedor: TDBEdit
+      Left = 95
+      Top = 26
+      Width = 314
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'nome_fornecedor'
+      DataSource = DS_Fornecedor
+      TabOrder = 1
+    end
+    object DBEdit_CNPJ_CPF: TDBEdit
+      Left = 415
+      Top = 26
+      Width = 170
+      Height = 21
+      DataField = 'for_cpf_cnpj'
+      DataSource = DS_Fornecedor
+      TabOrder = 2
+    end
+  end
+  object Panel_Central: TPanel
+    Left = 0
+    Top = 65
+    Width = 605
+    Height = 255
+    Align = alClient
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 13
+      Top = 4
+      Width = 71
+      Height = 13
+      Caption = 'Nome Fantasia'
+      FocusControl = DBEdit_NomeFantasia
+    end
+    object Label5: TLabel
+      Left = 247
+      Top = 4
+      Width = 59
+      Height = 13
+      Caption = 'Ins. Est./RG'
+      FocusControl = DBEdit_IE_RG
+    end
+    object Label6: TLabel
+      Left = 375
+      Top = 4
+      Width = 42
+      Height = 13
+      Caption = 'Telefone'
+      FocusControl = DBEdit_Telefone
+    end
+    object Label7: TLabel
+      Left = 481
+      Top = 4
+      Width = 33
+      Height = 13
+      Caption = 'Celular'
+      FocusControl = DBEdit_Celular
+    end
+    object Label8: TLabel
+      Left = 13
+      Top = 48
+      Width = 24
+      Height = 13
+      Caption = 'Email'
+      FocusControl = DBEdit_Email
+    end
+    object Label9: TLabel
+      Left = 223
+      Top = 48
+      Width = 18
+      Height = 13
+      Caption = 'Site'
+      FocusControl = DBEdit_Site
+    end
+    object Label10: TLabel
+      Left = 391
+      Top = 48
+      Width = 62
+      Height = 13
+      Caption = 'Dt. Cadastro'
+      FocusControl = DBEdit_DtCadastro
+    end
+    object Label11: TLabel
+      Left = 497
+      Top = 48
+      Width = 25
+      Height = 13
+      Caption = 'Ativo'
+      FocusControl = DBEdit_Ativo
+    end
+    object Label12: TLabel
+      Left = 13
+      Top = 94
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+      FocusControl = DBEdit_Endereco
+    end
+    object Label13: TLabel
+      Left = 375
+      Top = 93
+      Width = 28
+      Height = 13
+      Caption = 'Bairro'
+      FocusControl = DBEdit_Bairro
+    end
+    object Label14: TLabel
+      Left = 15
+      Top = 136
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+      FocusControl = DBEdit_CEP
+    end
+    object Label15: TLabel
+      Left = 121
+      Top = 136
+      Width = 59
+      Height = 13
+      Caption = 'C'#243'd. Cidade'
+      FocusControl = DBEdit_CodCidade
+    end
+    object Label16: TLabel
+      Left = 375
+      Top = 136
+      Width = 59
+      Height = 13
+      Caption = 'C'#243'd. Estado'
+      FocusControl = DBEdit_CodEstado
+    end
+    object Label17: TLabel
+      Left = 13
+      Top = 180
+      Width = 89
+      Height = 13
+      Caption = 'Contato/Vendedor'
+      FocusControl = DBEdit_NomeContato
+    end
+    object Label18: TLabel
+      Left = 260
+      Top = 180
+      Width = 134
+      Height = 13
+      Caption = 'Telefone Contato/Vendedor'
+      FocusControl = DBEdit_TelefoneContato
+    end
+    object DBEdit_NomeFantasia: TDBEdit
+      Left = 13
+      Top = 20
+      Width = 228
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'for_nome_usual'
+      DataSource = DS_Fornecedor
+      TabOrder = 0
+    end
+    object DBEdit_IE_RG: TDBEdit
+      Left = 247
+      Top = 20
+      Width = 122
+      Height = 21
+      DataField = 'for_rg_ie'
+      DataSource = DS_Fornecedor
+      TabOrder = 1
+    end
+    object DBEdit_Telefone: TDBEdit
+      Left = 375
+      Top = 20
+      Width = 100
+      Height = 21
+      DataField = 'for_telefone'
+      DataSource = DS_Fornecedor
+      TabOrder = 2
+    end
+    object DBEdit_Celular: TDBEdit
+      Left = 481
+      Top = 20
+      Width = 104
+      Height = 21
+      DataField = 'for_celular'
+      DataSource = DS_Fornecedor
+      TabOrder = 3
+    end
+    object DBEdit_Email: TDBEdit
+      Left = 13
+      Top = 64
+      Width = 204
+      Height = 21
+      DataField = 'for_email'
+      DataSource = DS_Fornecedor
+      TabOrder = 4
+    end
+    object DBEdit_Site: TDBEdit
+      Left = 223
+      Top = 64
+      Width = 162
+      Height = 21
+      DataField = 'for_site'
+      DataSource = DS_Fornecedor
+      TabOrder = 5
+    end
+    object DBEdit_DtCadastro: TDBEdit
+      Left = 391
+      Top = 64
+      Width = 100
+      Height = 21
+      DataField = 'for_dt_cadastro'
+      DataSource = DS_Fornecedor
+      TabOrder = 6
+    end
+    object DBEdit_Ativo: TDBEdit
+      Left = 497
+      Top = 64
+      Width = 88
+      Height = 21
+      DataField = 'for_ativo'
+      DataSource = DS_Fornecedor
+      TabOrder = 7
+    end
+    object DBEdit_Endereco: TDBEdit
+      Left = 13
+      Top = 109
+      Width = 356
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'for_endereco'
+      DataSource = DS_Fornecedor
+      TabOrder = 8
+    end
+    object DBEdit_Bairro: TDBEdit
+      Left = 375
+      Top = 109
+      Width = 210
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'for_bairro'
+      DataSource = DS_Fornecedor
+      TabOrder = 9
+    end
+    object DBEdit_CEP: TDBEdit
+      Left = 15
+      Top = 152
+      Width = 100
+      Height = 21
+      DataField = 'for_cep'
+      DataSource = DS_Fornecedor
+      TabOrder = 10
+    end
+    object DBEdit_CodCidade: TDBEdit
+      Left = 121
+      Top = 152
+      Width = 59
+      Height = 21
+      DataField = 'id_cidade'
+      DataSource = DS_Fornecedor
+      TabOrder = 11
+    end
+    object DBEdit_CodEstado: TDBEdit
+      Left = 375
+      Top = 152
+      Width = 59
+      Height = 21
+      DataField = 'id_estado'
+      DataSource = DS_Fornecedor
+      TabOrder = 12
+    end
+    object DBEdit_NomeContato: TDBEdit
+      Left = 13
+      Top = 196
+      Width = 236
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'for_contato'
+      DataSource = DS_Fornecedor
+      TabOrder = 13
+    end
+    object DBEdit_TelefoneContato: TDBEdit
+      Left = 260
+      Top = 196
+      Width = 134
+      Height = 21
+      DataField = 'for_cotato_telefone'
+      DataSource = DS_Fornecedor
+      TabOrder = 14
+    end
+    object DBLookupCB_NomeCidade: TDBLookupComboBox
+      Left = 186
+      Top = 152
+      Width = 183
+      Height = 21
+      DataField = 'nome_cidade'
+      DataSource = DS_Fornecedor
+      TabOrder = 15
+    end
+    object DBLookupCB_UF: TDBLookupComboBox
+      Left = 440
+      Top = 152
+      Width = 40
+      Height = 21
+      DataField = 'nome_estado'
+      DataSource = DS_Fornecedor
+      TabOrder = 16
+    end
+  end
+  object Panel_Inferior: TPanel
+    Left = 0
+    Top = 320
+    Width = 605
+    Height = 37
+    Align = alBottom
+    TabOrder = 2
+    object BTN_Novo: TButton
+      Left = 3
+      Top = 6
+      Width = 60
+      Height = 25
+      Caption = 'Novo'
+      Default = True
+      TabOrder = 0
+      OnClick = BTN_NovoClick
+    end
+    object BTN_Salvar: TButton
+      Left = 127
+      Top = 6
+      Width = 60
+      Height = 25
+      Caption = 'Salvar'
+      Default = True
+      TabOrder = 1
+      OnClick = BTN_SalvarClick
+    end
+    object BTN_Excluir: TButton
+      Left = 190
+      Top = 6
+      Width = 60
+      Height = 25
+      Caption = 'Excluir'
+      TabOrder = 2
+      OnClick = BTN_ExcluirClick
+    end
+    object BTN_Cancelar: TButton
+      Left = 252
+      Top = 6
+      Width = 60
+      Height = 25
+      Caption = 'Cancelar'
+      TabOrder = 3
+      OnClick = BTN_CancelarClick
+    end
+    object BTN_Editar: TButton
+      Left = 65
+      Top = 6
+      Width = 60
+      Height = 25
+      Caption = 'Editar'
+      TabOrder = 4
+      OnClick = BTN_EditarClick
+    end
+  end
+  object DS_Fornecedor: TDataSource
+    DataSet = dmDados.Fornecedores
+    Left = 456
+    Top = 248
+  end
+end

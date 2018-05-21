@@ -1,0 +1,24 @@
+unit uFormSaldoEstoque;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFormSaldoEstoque = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormSaldoEstoque: TFormSaldoEstoque;
+
+implementation
+
+{$R *.dfm}
+
+end.

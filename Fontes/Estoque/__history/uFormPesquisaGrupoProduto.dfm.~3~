@@ -1,0 +1,79 @@
+object FormPesquisaGrupoProduto: TFormPesquisaGrupoProduto
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Pesquisa Grupos'
+  ClientHeight = 385
+  ClientWidth = 683
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object EDT_PesquisarGrupo: TEdit
+    Left = 8
+    Top = 8
+    Width = 289
+    Height = 21
+    TabOrder = 0
+    Text = 'EDT_PesquisarGrupo'
+  end
+  object DBGrid_TabGrupoProdutos: TDBGrid
+    Left = 8
+    Top = 35
+    Width = 320
+    Height = 120
+    DataSource = DS_Grupos
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_grupo_produto'
+        Title.Caption = 'C'#243'd.'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome_grupo'
+        Title.Caption = 'Grupo'
+        Width = 250
+        Visible = True
+      end>
+  end
+  object DS_Grupos: TDataSource
+    DataSet = DataSet_Grupos
+    Left = 312
+    Top = 200
+  end
+  object DataSet_Grupos: TADODataSet
+    Active = True
+    Connection = dmDados.Con_Dados
+    CursorType = ctStatic
+    CommandText = 
+      'select * from GrupoDeProdutos Where nome_grupo like ?+ '#39'%'#39' Order' +
+      ' by nome_grupo'#13#10
+    Parameters = <
+      item
+        Name = '?'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        NumericScale = 255
+        Precision = 255
+        Size = 510
+        Value = Null
+      end>
+    Left = 232
+    Top = 200
+  end
+end

@@ -1,0 +1,67 @@
+unit uFormFornecedor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.ExtCtrls;
+
+type
+  TFormFornecedor = class(TForm)
+    Panel_Superior: TPanel;
+    Panel_Central: TPanel;
+    Panel_Inferior: TPanel;
+    Label1: TLabel;
+    DBEdit_CodFornecedor: TDBEdit;
+    DS_Fornecedor: TDataSource;
+    Label2: TLabel;
+    DBEdit_NomeFornecedor: TDBEdit;
+    Label3: TLabel;
+    DBEdit_CNPJ_CPF: TDBEdit;
+    Label4: TLabel;
+    DBEdit_NomeFantasia: TDBEdit;
+    Label5: TLabel;
+    DBEdit_IE_RG: TDBEdit;
+    Label6: TLabel;
+    DBEdit_Telefone: TDBEdit;
+    Label7: TLabel;
+    DBEdit_Celular: TDBEdit;
+    Label8: TLabel;
+    DBEdit_Email: TDBEdit;
+    Label9: TLabel;
+    DBEdit_Site: TDBEdit;
+    Label10: TLabel;
+    DBEdit_DtCadastro: TDBEdit;
+    Label11: TLabel;
+    DBEdit_Ativo: TDBEdit;
+    Label12: TLabel;
+    DBEdit_Endereco: TDBEdit;
+    Label13: TLabel;
+    DBEdit_Bairro: TDBEdit;
+    Label14: TLabel;
+    DBEdit_CEP: TDBEdit;
+    Label15: TLabel;
+    DBEdit_CodCidade: TDBEdit;
+    Label16: TLabel;
+    DBEdit_CodEstado: TDBEdit;
+    Label17: TLabel;
+    DBEdit_NomeContato: TDBEdit;
+    Label18: TLabel;
+    DBEdit_TelefoneContato: TDBEdit;
+    DBLookupCB_NomeCidade: TDBLookupComboBox;
+    DBLookupCB_UF: TDBLookupComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormFornecedor: TFormFornecedor;
+
+implementation
+
+{$R *.dfm}
+
+end.

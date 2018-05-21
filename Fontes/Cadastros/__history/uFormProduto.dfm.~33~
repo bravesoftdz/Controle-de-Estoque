@@ -1,0 +1,537 @@
+object FormProduto: TFormProduto
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Produto'
+  ClientHeight = 505
+  ClientWidth = 705
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MenuProdutos
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel_Superior: TPanel
+    Left = 0
+    Top = 41
+    Width = 705
+    Height = 133
+    Align = alTop
+    TabOrder = 0
+    object LBL_CodProduto: TLabel
+      Left = 8
+      Top = 3
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEDT_CodProduto
+    end
+    object LBL_CodBarras: TLabel
+      Left = 98
+      Top = 3
+      Width = 57
+      Height = 13
+      Caption = 'C'#243'd. Barras'
+      FocusControl = DBEDT_CodBarras
+    end
+    object LBL_Referencia: TLabel
+      Left = 370
+      Top = 3
+      Width = 52
+      Height = 13
+      Caption = 'Refer'#234'ncia'
+      FocusControl = DBEDT_Referencia
+    end
+    object LBL_Nome: TLabel
+      Left = 8
+      Top = 43
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+      FocusControl = DBEDT_NomeProduto
+    end
+    object LBL_NomeReduzido: TLabel
+      Left = 419
+      Top = 43
+      Width = 74
+      Height = 13
+      Caption = 'Nome Reduzido'
+      FocusControl = DBEDT_NomeProdutoReduzido
+    end
+    object LBL_Unidade: TLabel
+      Left = 8
+      Top = 83
+      Width = 39
+      Height = 13
+      Caption = 'Unidade'
+      FocusControl = DBEDT_Unidade
+    end
+    object LBL_CodMarca: TLabel
+      Left = 80
+      Top = 83
+      Width = 55
+      Height = 13
+      Caption = 'C'#243'd. Marca'
+      FocusControl = DBEDT_CodMarca
+    end
+    object LBL_CodFabricante: TLabel
+      Left = 384
+      Top = 83
+      Width = 77
+      Height = 13
+      Caption = 'C'#243'd. Fabricante'
+      FocusControl = DBEDT_CodFabricante
+    end
+    object LBL_Marca: TLabel
+      Left = 156
+      Top = 83
+      Width = 29
+      Height = 13
+      Caption = 'Marca'
+      FocusControl = DBLookupCB_NomeMarca
+    end
+    object LBL_Fabricante: TLabel
+      Left = 467
+      Top = 83
+      Width = 51
+      Height = 13
+      Caption = 'Fabricante'
+      FocusControl = DBLookupCB_NomeFabricante
+    end
+    object DBEDT_CodProduto: TDBEdit
+      Left = 8
+      Top = 19
+      Width = 84
+      Height = 21
+      DataField = 'id_produto'
+      DataSource = DS_Produtos
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object DBEDT_CodBarras: TDBEdit
+      Left = 98
+      Top = 19
+      Width = 138
+      Height = 21
+      DataField = 'cod_barras'
+      DataSource = DS_Produtos
+      TabOrder = 1
+    end
+    object DBEDT_Referencia: TDBEdit
+      Left = 372
+      Top = 19
+      Width = 282
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'pro_referencia'
+      DataSource = DS_Produtos
+      TabOrder = 2
+    end
+    object DBEDT_NomeProduto: TDBEdit
+      Left = 8
+      Top = 59
+      Width = 396
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'pro_nome'
+      DataSource = DS_Produtos
+      TabOrder = 3
+    end
+    object DBEDT_NomeProdutoReduzido: TDBEdit
+      Left = 419
+      Top = 59
+      Width = 273
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'pro_nome_reduzido'
+      DataSource = DS_Produtos
+      TabOrder = 4
+    end
+    object DBEDT_Unidade: TDBEdit
+      Left = 8
+      Top = 99
+      Width = 60
+      Height = 21
+      CharCase = ecUpperCase
+      DataField = 'pro_unidade'
+      DataSource = DS_Produtos
+      TabOrder = 5
+    end
+    object DBEDT_CodMarca: TDBEdit
+      Left = 80
+      Top = 99
+      Width = 70
+      Height = 21
+      DataField = 'id_marca'
+      DataSource = DS_Produtos
+      TabOrder = 6
+    end
+    object DBEDT_CodFabricante: TDBEdit
+      Left = 384
+      Top = 99
+      Width = 70
+      Height = 21
+      DataField = 'id_fabricante'
+      DataSource = DS_Produtos
+      TabOrder = 7
+    end
+    object DBLookupCB_NomeMarca: TDBLookupComboBox
+      Left = 156
+      Top = 99
+      Width = 222
+      Height = 21
+      DataField = 'nome_marca'
+      DataSource = DS_Produtos
+      TabOrder = 8
+    end
+    object DBLookupCB_NomeFabricante: TDBLookupComboBox
+      Left = 467
+      Top = 99
+      Width = 225
+      Height = 21
+      DataField = 'nome_fabricante'
+      DataSource = DS_Produtos
+      TabOrder = 9
+    end
+  end
+  object Panel_Centro: TPanel
+    Left = 0
+    Top = 174
+    Width = 705
+    Height = 278
+    Align = alClient
+    TabOrder = 1
+    object PageControl_DadosProduto: TPageControl
+      Left = 1
+      Top = 1
+      Width = 703
+      Height = 276
+      ActivePage = EstruturaMercadologica
+      Align = alClient
+      TabOrder = 0
+      object EstruturaMercadologica: TTabSheet
+        AlignWithMargins = True
+        Caption = 'Estrutura Mercadologica'
+        DoubleBuffered = False
+        ParentDoubleBuffered = False
+        object LBL_CodSetor: TLabel
+          Left = 18
+          Top = 16
+          Width = 52
+          Height = 13
+          Caption = 'C'#243'd. Setor'
+          FocusControl = DBEDT_CodSetor
+        end
+        object LBL_CodGrupo: TLabel
+          Left = 18
+          Top = 64
+          Width = 55
+          Height = 13
+          Caption = 'C'#243'd. Grupo'
+          FocusControl = DBEDT_CodGrupo
+        end
+        object LBL_CodSubGrupo: TLabel
+          Left = 18
+          Top = 112
+          Width = 72
+          Height = 13
+          Caption = 'C'#243'd. Subgrupo'
+          FocusControl = DBEDT_SubGrupo
+        end
+        object LBL_NomeSetor: TLabel
+          Left = 124
+          Top = 16
+          Width = 26
+          Height = 13
+          Caption = 'Setor'
+          FocusControl = DBLookupCB_NomeSetor
+        end
+        object LBL_NomeGrupo: TLabel
+          Left = 124
+          Top = 64
+          Width = 29
+          Height = 13
+          Caption = 'Grupo'
+          FocusControl = DBLookupCB_NomeGrupo
+        end
+        object LBL_NomeSubGrupo: TLabel
+          Left = 124
+          Top = 112
+          Width = 46
+          Height = 13
+          Caption = 'Subgrupo'
+          FocusControl = DBLookupCB_NomeSubGrupo
+        end
+        object DBEDT_CodSetor: TDBEdit
+          Left = 18
+          Top = 32
+          Width = 100
+          Height = 21
+          DataField = 'id_setor'
+          DataSource = DS_Produtos
+          TabOrder = 0
+        end
+        object DBEDT_CodGrupo: TDBEdit
+          Left = 18
+          Top = 80
+          Width = 100
+          Height = 21
+          DataField = 'id_grupoproduto'
+          DataSource = DS_Produtos
+          TabOrder = 1
+        end
+        object DBEDT_SubGrupo: TDBEdit
+          Left = 18
+          Top = 128
+          Width = 100
+          Height = 21
+          DataField = 'id_subgrupo_produto'
+          DataSource = DS_Produtos
+          TabOrder = 2
+        end
+        object DBLookupCB_NomeSetor: TDBLookupComboBox
+          Left = 124
+          Top = 32
+          Width = 259
+          Height = 21
+          DataField = 'nome_setor'
+          DataSource = DS_Produtos
+          TabOrder = 3
+        end
+        object DBLookupCB_NomeGrupo: TDBLookupComboBox
+          Left = 124
+          Top = 80
+          Width = 259
+          Height = 21
+          DataField = 'nome_grupo'
+          DataSource = DS_Produtos
+          TabOrder = 4
+        end
+        object DBLookupCB_NomeSubGrupo: TDBLookupComboBox
+          Left = 124
+          Top = 128
+          Width = 259
+          Height = 21
+          DataField = 'nome_subgrupo'
+          DataSource = DS_Produtos
+          TabOrder = 5
+        end
+      end
+      object Precos: TTabSheet
+        AlignWithMargins = True
+        Caption = 'Pre'#231'os'
+        ImageIndex = 1
+        object LBL_ValorCusto: TLabel
+          Left = 15
+          Top = 32
+          Width = 55
+          Height = 13
+          Caption = 'Valor Custo'
+          FocusControl = DBEDT_ValorCusto
+        end
+        object LBL_ValorVenda: TLabel
+          Left = 121
+          Top = 32
+          Width = 57
+          Height = 13
+          Caption = 'Valor Venda'
+          FocusControl = DBEDT_ValorVenda
+        end
+        object LBL_MargemLucro: TLabel
+          Left = 227
+          Top = 32
+          Width = 67
+          Height = 13
+          Caption = 'Margem Lucro'
+          FocusControl = DBEDT_MargemLucro
+        end
+        object DBEDT_ValorCusto: TDBEdit
+          Left = 15
+          Top = 48
+          Width = 100
+          Height = 21
+          DataField = 'pro_valor_custo'
+          DataSource = DS_Produtos
+          TabOrder = 0
+        end
+        object DBEDT_ValorVenda: TDBEdit
+          Left = 121
+          Top = 48
+          Width = 100
+          Height = 21
+          DataField = 'pro_valor_venda'
+          DataSource = DS_Produtos
+          TabOrder = 1
+        end
+        object DBEDT_MargemLucro: TDBEdit
+          Left = 227
+          Top = 48
+          Width = 100
+          Height = 21
+          DataField = 'pro_margem_lucro'
+          DataSource = DS_Produtos
+          TabOrder = 2
+        end
+      end
+    end
+  end
+  object Panel_Inferior: TPanel
+    Left = 0
+    Top = 452
+    Width = 705
+    Height = 53
+    Align = alBottom
+    TabOrder = 2
+    object LBL_DtCadastro: TLabel
+      Left = 594
+      Top = 8
+      Width = 62
+      Height = 13
+      Caption = 'Dt. Cadastro'
+      FocusControl = DBEDT_DtCadastro
+    end
+    object LBL_DtAlteracao: TLabel
+      Left = 488
+      Top = 8
+      Width = 64
+      Height = 13
+      Caption = 'Dt. Altera'#231#227'o'
+      FocusControl = DBEDT_DtAlteracao
+    end
+    object LBL_Mensagem: TLabel
+      Left = 19
+      Top = 24
+      Width = 73
+      Height = 13
+      Caption = 'LBL_Mensagem'
+    end
+    object DBEDT_DtCadastro: TDBEdit
+      Left = 594
+      Top = 24
+      Width = 100
+      Height = 21
+      DataField = 'pro_dt_cadastro'
+      DataSource = DS_Produtos
+      TabOrder = 0
+    end
+    object DBEDT_DtAlteracao: TDBEdit
+      Left = 488
+      Top = 24
+      Width = 100
+      Height = 21
+      DataField = 'pro_dt_alteracao'
+      DataSource = DS_Produtos
+      TabOrder = 1
+    end
+  end
+  object Panel_Menu: TPanel
+    Left = 0
+    Top = 0
+    Width = 705
+    Height = 41
+    Align = alTop
+    TabOrder = 3
+    object BTN_Novo: TButton
+      Left = 173
+      Top = 7
+      Width = 60
+      Height = 25
+      Caption = 'Novo'
+      Default = True
+      TabOrder = 0
+      OnClick = BTN_NovoClick
+    end
+    object BTN_Salvar: TButton
+      Left = 297
+      Top = 7
+      Width = 60
+      Height = 25
+      Caption = 'Salvar'
+      Default = True
+      TabOrder = 1
+      OnClick = BTN_SalvarClick
+    end
+    object BTN_Excluir: TButton
+      Left = 360
+      Top = 7
+      Width = 60
+      Height = 25
+      Caption = 'Excluir'
+      TabOrder = 2
+      OnClick = BTN_ExcluirClick
+    end
+    object BTN_Cancelar: TButton
+      Left = 422
+      Top = 7
+      Width = 60
+      Height = 25
+      Caption = 'Cancelar'
+      TabOrder = 3
+      OnClick = BTN_CancelarClick
+    end
+    object BTN_Editar: TButton
+      Left = 235
+      Top = 7
+      Width = 60
+      Height = 25
+      Caption = 'Editar'
+      TabOrder = 4
+      OnClick = BTN_EditarClick
+    end
+    object BTN_Primeiro: TButton
+      Left = 8
+      Top = 7
+      Width = 39
+      Height = 25
+      Caption = '<<'
+      TabOrder = 5
+      OnClick = BTN_PrimeiroClick
+    end
+    object BTN_Ultimo: TButton
+      Left = 128
+      Top = 7
+      Width = 39
+      Height = 25
+      Caption = '>>'
+      TabOrder = 6
+      OnClick = BTN_UltimoClick
+    end
+    object BTN_Proximo: TButton
+      Left = 88
+      Top = 7
+      Width = 39
+      Height = 25
+      Caption = '>'
+      TabOrder = 7
+      OnClick = BTN_ProximoClick
+    end
+    object BTN_Anterior: TButton
+      Left = 48
+      Top = 7
+      Width = 39
+      Height = 25
+      Caption = '<'
+      TabOrder = 8
+      OnClick = BTN_AnteriorClick
+    end
+  end
+  object DS_Produtos: TDataSource
+    AutoEdit = False
+    DataSet = dmDados.Produtos
+    Left = 296
+    Top = 48
+  end
+  object MenuProdutos: TMainMenu
+    Left = 648
+    Top = 8
+    object ESTE1: TMenuItem
+      Caption = 'TESTE'
+    end
+  end
+end

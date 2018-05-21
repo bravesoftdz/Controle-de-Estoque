@@ -1,0 +1,407 @@
+object FormProdutos: TFormProdutos
+  Left = 0
+  Top = 0
+  BorderStyle = bsSingle
+  Caption = 'Produto'
+  ClientHeight = 427
+  ClientWidth = 517
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 16
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 90
+    Top = 16
+    Width = 82
+    Height = 13
+    Caption = 'C'#243'digo de Barras'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 217
+    Top = 16
+    Width = 52
+    Height = 13
+    Caption = 'Refer'#234'ncia'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 56
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
+    FocusControl = DBEdit4
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 96
+    Width = 74
+    Height = 13
+    Caption = 'Nome Reduzido'
+    FocusControl = DBEdit5
+  end
+  object Label6: TLabel
+    Left = 389
+    Top = 56
+    Width = 39
+    Height = 13
+    Caption = 'Unidade'
+    FocusControl = DBEdit6
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 176
+    Width = 55
+    Height = 13
+    Caption = 'C'#243'd. Marca'
+    FocusControl = DBEdit7
+  end
+  object Label8: TLabel
+    Left = 8
+    Top = 214
+    Width = 77
+    Height = 13
+    Caption = 'C'#243'd. Fabricante'
+    FocusControl = DBEdit8
+  end
+  object Label9: TLabel
+    Left = 8
+    Top = 257
+    Width = 52
+    Height = 13
+    Caption = 'C'#243'd. Setor'
+    FocusControl = DBEdit9
+  end
+  object Label10: TLabel
+    Left = 8
+    Top = 298
+    Width = 96
+    Height = 13
+    Caption = 'C'#243'd. Grupo Produto'
+    FocusControl = DBEdit10
+  end
+  object Label11: TLabel
+    Left = 8
+    Top = 339
+    Width = 113
+    Height = 13
+    Caption = 'C'#243'd. Subgrupo Produto'
+    FocusControl = DBEdit11
+  end
+  object Label12: TLabel
+    Left = 256
+    Top = 96
+    Width = 73
+    Height = 13
+    Caption = 'Pre'#231'o de Custo'
+    FocusControl = DBEdit12
+  end
+  object Label13: TLabel
+    Left = 389
+    Top = 96
+    Width = 75
+    Height = 13
+    Caption = 'Pre'#231'o de Venda'
+    FocusControl = DBEdit13
+  end
+  object Label15: TLabel
+    Left = 8
+    Top = 136
+    Width = 74
+    Height = 13
+    Caption = 'Estoque Minimo'
+    FocusControl = DBEdit15
+  end
+  object Label16: TLabel
+    Left = 127
+    Top = 136
+    Width = 67
+    Height = 13
+    Caption = 'Estoque Atual'
+    FocusControl = DBEdit16
+  end
+  object Label17: TLabel
+    Left = 247
+    Top = 136
+    Width = 85
+    Height = 13
+    Caption = 'Data de Cadastro'
+    FocusControl = DBEdit17
+  end
+  object Label18: TLabel
+    Left = 353
+    Top = 136
+    Width = 119
+    Height = 13
+    Caption = 'Data '#218'ltima Aatualiza'#231#227'o'
+    FocusControl = DBEdit18
+  end
+  object BTN_Novo: TButton
+    Left = 8
+    Top = 394
+    Width = 75
+    Height = 25
+    Caption = 'Novo'
+    TabOrder = 0
+    OnClick = BTN_NovoClick
+  end
+  object BTN_Editar: TButton
+    Left = 85
+    Top = 394
+    Width = 75
+    Height = 25
+    Caption = 'Editar'
+    TabOrder = 1
+    OnClick = BTN_EditarClick
+  end
+  object BTN_Excluir: TButton
+    Left = 162
+    Top = 394
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 2
+    OnClick = BTN_ExcluirClick
+  end
+  object BTN_Salvar: TButton
+    Left = 317
+    Top = 394
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 3
+    OnClick = BTN_SalvarClick
+  end
+  object BTN_Cancelar: TButton
+    Left = 239
+    Top = 394
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 4
+    OnClick = BTN_CancelarClick
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 32
+    Width = 76
+    Height = 21
+    DataField = 'id_produto'
+    DataSource = DS_Produtos
+    TabOrder = 5
+  end
+  object DBEdit2: TDBEdit
+    Left = 90
+    Top = 32
+    Width = 121
+    Height = 21
+    DataField = 'cod_barras'
+    DataSource = DS_Produtos
+    TabOrder = 6
+  end
+  object DBEdit3: TDBEdit
+    Left = 217
+    Top = 32
+    Width = 288
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'pro_referencia'
+    DataSource = DS_Produtos
+    TabOrder = 7
+  end
+  object DBEdit4: TDBEdit
+    Left = 8
+    Top = 72
+    Width = 375
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'pro_nome'
+    DataSource = DS_Produtos
+    TabOrder = 8
+  end
+  object DBEdit5: TDBEdit
+    Left = 8
+    Top = 112
+    Width = 242
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'pro_nome_reduzido'
+    DataSource = DS_Produtos
+    TabOrder = 9
+  end
+  object DBEdit6: TDBEdit
+    Left = 389
+    Top = 72
+    Width = 55
+    Height = 21
+    DataField = 'pro_unidade'
+    DataSource = DS_Produtos
+    TabOrder = 10
+  end
+  object DBEdit7: TDBEdit
+    Left = 8
+    Top = 192
+    Width = 100
+    Height = 21
+    DataField = 'id_marca'
+    DataSource = DS_Produtos
+    TabOrder = 11
+  end
+  object DBEdit8: TDBEdit
+    Left = 8
+    Top = 230
+    Width = 100
+    Height = 21
+    DataField = 'id_fabricante'
+    DataSource = DS_Produtos
+    TabOrder = 12
+  end
+  object DBEdit9: TDBEdit
+    Left = 8
+    Top = 273
+    Width = 100
+    Height = 21
+    DataField = 'id_setor'
+    DataSource = DS_Produtos
+    TabOrder = 13
+  end
+  object DBEdit10: TDBEdit
+    Left = 8
+    Top = 314
+    Width = 100
+    Height = 21
+    DataField = 'id_grupoproduto'
+    DataSource = DS_Produtos
+    TabOrder = 14
+  end
+  object DBEdit11: TDBEdit
+    Left = 8
+    Top = 356
+    Width = 100
+    Height = 21
+    DataField = 'id_subgrupo_produto'
+    DataSource = DS_Produtos
+    TabOrder = 15
+  end
+  object DBEdit12: TDBEdit
+    Left = 256
+    Top = 112
+    Width = 116
+    Height = 21
+    DataField = 'pro_valor_custo'
+    DataSource = DS_Produtos
+    TabOrder = 16
+  end
+  object DBEdit13: TDBEdit
+    Left = 389
+    Top = 112
+    Width = 116
+    Height = 21
+    DataField = 'pro_valor_venda'
+    DataSource = DS_Produtos
+    TabOrder = 17
+  end
+  object DBEdit15: TDBEdit
+    Left = 8
+    Top = 152
+    Width = 113
+    Height = 21
+    DataField = 'pro_estoque_minimo'
+    DataSource = DS_Produtos
+    TabOrder = 18
+  end
+  object DBEdit16: TDBEdit
+    Left = 127
+    Top = 152
+    Width = 114
+    Height = 21
+    DataField = 'pro_estoque_atual'
+    DataSource = DS_Produtos
+    TabOrder = 19
+  end
+  object DBEdit17: TDBEdit
+    Left = 247
+    Top = 152
+    Width = 100
+    Height = 21
+    DataField = 'pro_dt_cadastro'
+    DataSource = DS_Produtos
+    TabOrder = 20
+  end
+  object DBEdit18: TDBEdit
+    Left = 353
+    Top = 152
+    Width = 152
+    Height = 21
+    DataField = 'pro_dt_alteracao'
+    DataSource = DS_Produtos
+    TabOrder = 21
+  end
+  object DBLookupCB_Marca: TDBLookupComboBox
+    Left = 114
+    Top = 192
+    Width = 233
+    Height = 21
+    DataField = 'nome_marca'
+    DataSource = DS_Produtos
+    TabOrder = 22
+  end
+  object DBLookupCB_Fabricante: TDBLookupComboBox
+    Left = 114
+    Top = 230
+    Width = 233
+    Height = 21
+    DataField = 'nome_fabricante'
+    DataSource = DS_Produtos
+    TabOrder = 23
+  end
+  object DBLookupCB_Setor: TDBLookupComboBox
+    Left = 114
+    Top = 273
+    Width = 233
+    Height = 21
+    DataField = 'nome_setor'
+    DataSource = DS_Produtos
+    TabOrder = 24
+  end
+  object DBLookupCB_GrupoProduto: TDBLookupComboBox
+    Left = 114
+    Top = 312
+    Width = 233
+    Height = 21
+    DataField = 'nome_grupo'
+    DataSource = DS_Produtos
+    TabOrder = 25
+  end
+  object DBLookupCB_SubgrupoProduto: TDBLookupComboBox
+    Left = 114
+    Top = 356
+    Width = 233
+    Height = 21
+    DataField = 'nome_subgrupo'
+    DataSource = DS_Produtos
+    TabOrder = 26
+  end
+  object DS_Produtos: TDataSource
+    AutoEdit = False
+    DataSet = dmDados.Produtos
+    Left = 408
+    Top = 272
+  end
+end

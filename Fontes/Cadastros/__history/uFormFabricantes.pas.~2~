@@ -1,0 +1,32 @@
+unit uFormFabricantes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFormCadPadrao, Data.DB, Vcl.StdCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TFormFabricantes = class(TFormCadPadrao)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DS_Fabricantes: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormFabricantes: TFormFabricantes;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,24 @@
+unit uFormPesquisaGrupoProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFormPesquisaGrupoProduto = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPesquisaGrupoProduto: TFormPesquisaGrupoProduto;
+
+implementation
+
+{$R *.dfm}
+
+end.

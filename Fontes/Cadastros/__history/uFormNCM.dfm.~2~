@@ -1,0 +1,97 @@
+inherited FormNCM: TFormNCM
+  Caption = 'FormNCM'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Superior: TPanel
+    Height = 65
+    ExplicitHeight = 65
+    object Label1: TLabel
+      Left = 10
+      Top = 8
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit1
+    end
+    object Label2: TLabel
+      Left = 80
+      Top = 8
+      Width = 48
+      Height = 13
+      Caption = 'C'#243'd. NCM'
+      FocusControl = DBEdit2
+    end
+    object Label3: TLabel
+      Left = 217
+      Top = 8
+      Width = 46
+      Height = 13
+      Caption = 'Descri'#231#227'o'
+      FocusControl = DBEdit3
+    end
+    object DBEdit1: TDBEdit
+      Left = 10
+      Top = 24
+      Width = 64
+      Height = 21
+      DataField = 'id_ncm'
+      DataSource = DS_NCM
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 80
+      Top = 24
+      Width = 131
+      Height = 21
+      DataField = 'cod_ncm'
+      DataSource = DS_NCM
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 217
+      Top = 24
+      Width = 386
+      Height = 21
+      DataField = 'ncm_descricao'
+      DataSource = DS_NCM
+      TabOrder = 2
+    end
+  end
+  inherited Panel_Central: TPanel
+    Top = 65
+    Height = 354
+    ExplicitLeft = 0
+    ExplicitTop = 113
+    ExplicitWidth = 634
+    ExplicitHeight = 306
+    inherited DBGrid_Tabela: TDBGrid
+      Height = 352
+      DataSource = DS_NCM
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id_ncm'
+          Width = 50
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cod_ncm'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ncm_descricao'
+          Width = 440
+          Visible = True
+        end>
+    end
+  end
+  object DS_NCM: TDataSource
+    AutoEdit = False
+    DataSet = dmDados.NCM
+    Left = 304
+    Top = 224
+  end
+end

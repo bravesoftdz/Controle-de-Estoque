@@ -1,0 +1,128 @@
+unit uFormPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+type
+  TFormPrincipal = class(TForm)
+    Menu: TMainMenu;
+    MenuArquivo: TMenuItem;
+    Button5: TButton;
+    Button6: TButton;
+    MenuCadastros: TMenuItem;
+    MenuEstoque: TMenuItem;
+    MenuFinanceiro: TMenuItem;
+    SubMenu_EstruturaMercadolgica: TMenuItem;
+    SubMenu_Setores: TMenuItem;
+    SubMenu_Grupos: TMenuItem;
+    SubMenu_SubGrupos: TMenuItem;
+    SubMenu_Produtos: TMenuItem;
+    SubMenu_Marcas: TMenuItem;
+    SubMenu_Fabricantes: TMenuItem;
+    SubMenu_Vasilhames: TMenuItem;
+    SubMenu_Fornecedor: TMenuItem;
+    SubMenu_SaldoEstoque: TMenuItem;
+    SubMenu_PesquisaProduto: TMenuItem;
+    SubMenu_Localizacao: TMenuItem;
+    SubMenu_Cidades: TMenuItem;
+    SubMenu_Estados: TMenuItem;
+    SubMenu_Produto: TMenuItem;
+    Label1: TLabel;
+    procedure SubMenu_SetoresClick(Sender: TObject);
+    procedure SubMenu_GruposClick(Sender: TObject);
+    procedure SubMenu_SubGruposClick(Sender: TObject);
+    procedure SubMenu_MarcasClick(Sender: TObject);
+    procedure SubMenu_FabricantesClick(Sender: TObject);
+    procedure SubMenu_VasilhamesClick(Sender: TObject);
+    procedure SubMenu_CidadesClick(Sender: TObject);
+    procedure SubMenu_EstadosClick(Sender: TObject);
+    procedure SubMenu_FornecedorClick(Sender: TObject);
+    procedure SubMenu_ProdutoClick(Sender: TObject);
+    procedure SubMenu_PesquisaProdutoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses uFormEstados, uFormCidades, uFormFabricantes, uFormMarcas, uFormSetores,
+  uFormGrupoDeProdutos, uFormSubGruposDeProdutos, uFormFornecedor,
+  uFormVasilhames, uFormSaldoEstoque, uFormProduto, uFormpesquisaProduto;
+
+
+procedure TFormPrincipal.SubMenu_CidadesClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormCidades,FormCidades);
+  FormCidades.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_EstadosClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormEstados,FormEstados);
+  FormEstados.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_FabricantesClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormFabricantes,FormFabricantes);
+  FormFabricantes.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_FornecedorClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormFornecedor,FormFornecedor);
+  FormFornecedor.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_GruposClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormGrupoDeProdutos,FormGrupoDeProdutos);
+  FormGrupoDeProdutos.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_MarcasClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormMarcas,FormMarcas);
+  FormMarcas.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_PesquisaProdutoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormPesquisaProduto,FormPesquisaProduto);
+  FormPesquisaProduto.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_ProdutoClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormProduto,FormProduto);
+  FormProduto.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_SetoresClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormSetores,FormSetores);
+  FormSetores.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_SubGruposClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormSubGruposDeProdutos,FormSubGruposDeProdutos);
+  FormSubGruposDeProdutos.ShowModal;
+end;
+
+procedure TFormPrincipal.SubMenu_VasilhamesClick(Sender: TObject);
+begin
+  Application.CreateForm(TFormVasilhames,FormVasilhames);
+  FormVasilhames.ShowModal;
+end;
+
+end.

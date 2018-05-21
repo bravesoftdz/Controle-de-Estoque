@@ -1,0 +1,190 @@
+inherited FormSubGruposDeProdutos: TFormSubGruposDeProdutos
+  Caption = 'SubGrupos de Produtos'
+  ClientWidth = 597
+  ExplicitWidth = 603
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Superior: TPanel
+    Width = 597
+    Height = 97
+    ExplicitWidth = 779
+    ExplicitHeight = 97
+    object Label1: TLabel
+      Left = 9
+      Top = 6
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit_CodSubGrupo
+    end
+    object Label2: TLabel
+      Left = 90
+      Top = 6
+      Width = 46
+      Height = 13
+      Caption = 'Subgrupo'
+      FocusControl = DBEdit_NomeSubgrupo
+    end
+    object Label3: TLabel
+      Left = 323
+      Top = 6
+      Width = 62
+      Height = 13
+      Caption = 'Dt. Cadastro'
+      FocusControl = DBEdit_DtCadSubgrupo
+    end
+    object Label4: TLabel
+      Left = 418
+      Top = 6
+      Width = 25
+      Height = 13
+      Caption = 'Ativo'
+      FocusControl = DBEdit_AtivoSubgrupo
+    end
+    object Label5: TLabel
+      Left = 9
+      Top = 46
+      Width = 55
+      Height = 13
+      Caption = 'C'#243'd. Grupo'
+      FocusControl = DBEdit_CodGrupo
+    end
+    object Label6: TLabel
+      Left = 90
+      Top = 46
+      Width = 29
+      Height = 13
+      Caption = 'Grupo'
+      FocusControl = DBEdit_NomeGrupo
+    end
+    object DBEdit_CodSubGrupo: TDBEdit
+      Left = 9
+      Top = 22
+      Width = 75
+      Height = 21
+      DataField = 'id_subgrupo_produtos'
+      DataSource = DS_SubGrupo
+      TabOrder = 0
+    end
+    object DBEdit_NomeSubgrupo: TDBEdit
+      Left = 90
+      Top = 22
+      Width = 227
+      Height = 21
+      DataField = 'nome_subgrupo'
+      DataSource = DS_SubGrupo
+      TabOrder = 1
+    end
+    object DBEdit_DtCadSubgrupo: TDBEdit
+      Left = 323
+      Top = 22
+      Width = 89
+      Height = 21
+      DataField = 'dt_cadastro'
+      DataSource = DS_SubGrupo
+      TabOrder = 2
+    end
+    object DBEdit_AtivoSubgrupo: TDBEdit
+      Left = 418
+      Top = 22
+      Width = 50
+      Height = 21
+      DataField = 'subgrupo_ativo'
+      DataSource = DS_SubGrupo
+      TabOrder = 3
+    end
+    object DBEdit_CodGrupo: TDBEdit
+      Left = 9
+      Top = 62
+      Width = 75
+      Height = 21
+      DataField = 'id_grupoproduto'
+      DataSource = DS_SubGrupo
+      TabOrder = 4
+    end
+    object DBEdit_NomeGrupo: TDBEdit
+      Left = 90
+      Top = 62
+      Width = 227
+      Height = 21
+      DataField = 'nome_grupo'
+      DataSource = DS_SubGrupo
+      TabOrder = 5
+    end
+  end
+  inherited Panel_Central: TPanel
+    Top = 97
+    Width = 597
+    Height = 322
+    ExplicitLeft = 0
+    ExplicitTop = 113
+    ExplicitWidth = 634
+    ExplicitHeight = 306
+    inherited DBGrid_Tabela: TDBGrid
+      Width = 595
+      Height = 320
+      DataSource = DS_SubGrupo
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id_subgrupo_produtos'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_subgrupo'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'dt_cadastro'
+          Width = 80
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'subgrupo_ativo'
+          Width = 40
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'id_grupoproduto'
+          Width = -1
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_grupo'
+          Width = 200
+          Visible = True
+        end>
+    end
+  end
+  inherited Panel_Inferior: TPanel
+    Width = 597
+    inherited BTN_Novo: TButton
+      OnClick = BTN_NovoClick
+    end
+    inherited BTN_Salvar: TButton
+      OnClick = BTN_SalvarClick
+    end
+    inherited BTN_Excluir: TButton
+      OnClick = BTN_ExcluirClick
+    end
+    inherited BTN_Cancelar: TButton
+      OnClick = BTN_CancelarClick
+    end
+    inherited BTN_Editar: TButton
+      OnClick = BTN_EditarClick
+    end
+  end
+  object DS_SubGrupo: TDataSource
+    AutoEdit = False
+    DataSet = dmDados.SubGruposProdutos
+    Left = 264
+    Top = 240
+  end
+end

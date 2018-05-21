@@ -1,0 +1,81 @@
+inherited FormTiposEmbalagens: TFormTiposEmbalagens
+  Caption = 'FormTiposEmbalagens'
+  ClientWidth = 354
+  ExplicitWidth = 360
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Superior: TPanel
+    Width = 354
+    Height = 57
+    ExplicitHeight = 57
+    object Label1: TLabel
+      Left = 19
+      Top = 8
+      Width = 26
+      Height = 13
+      Caption = 'C'#243'd. '
+      FocusControl = DBEdit_CodEmb
+    end
+    object Label2: TLabel
+      Left = 103
+      Top = 8
+      Width = 54
+      Height = 13
+      Caption = 'Nome Emb.'
+      FocusControl = DBEdit_NomeEmb
+    end
+    object DBEdit_CodEmb: TDBEdit
+      Left = 19
+      Top = 24
+      Width = 78
+      Height = 21
+      DataField = 'id_tipo_embalagem'
+      DataSource = DS_TipoEmb
+      TabOrder = 0
+    end
+    object DBEdit_NomeEmb: TDBEdit
+      Left = 103
+      Top = 24
+      Width = 100
+      Height = 21
+      DataField = 'emb_nome'
+      DataSource = DS_TipoEmb
+      TabOrder = 1
+    end
+  end
+  inherited Panel_Central: TPanel
+    Top = 57
+    Width = 354
+    Height = 362
+    ExplicitLeft = 0
+    ExplicitTop = 113
+    ExplicitWidth = 634
+    ExplicitHeight = 306
+    inherited DBGrid_Tabela: TDBGrid
+      Width = 352
+      Height = 360
+      DataSource = DS_TipoEmb
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id_tipo_embalagem'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'emb_nome'
+          Width = 280
+          Visible = True
+        end>
+    end
+  end
+  inherited Panel_Inferior: TPanel
+    Width = 354
+  end
+  object DS_TipoEmb: TDataSource
+    DataSet = dmDados.TipoEmbalagem
+    Left = 160
+    Top = 208
+  end
+end

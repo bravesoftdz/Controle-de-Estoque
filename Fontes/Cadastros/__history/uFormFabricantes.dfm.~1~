@@ -1,0 +1,11 @@
+inherited FormFabricantes: TFormFabricantes
+  Caption = 'FormFabricantes'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited Panel_Central: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 113
+    ExplicitWidth = 634
+    ExplicitHeight = 306
+  end
+end
